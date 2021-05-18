@@ -16,7 +16,7 @@ import express from 'express'; // 3rd party module
 import fs from 'fs'; // core module
 import { fileURLToPath } from 'url'; // core module
 import { dirname, join } from 'path'; // core module
-// import uniqid from 'uniqid'; // 3rd party module
+import uniqid from 'uniqid'; // 3rd party module
 
 const studentsRouter = express.Router();
 
@@ -33,6 +33,7 @@ studentsRouter.post('/', (req, res) => {
   // 1. read request body
   const newStudent = { ...req.body, createdAt: new Date(), _id: uniqid() };
   console.log(newStudent);
+  res.send('i got nothing');
 
   // 2. read the old content of the file students.json
 
